@@ -1,0 +1,6 @@
+{
+  "name": "GigaShop - Gadget & Clothing eCommerce",
+  "description": "A premium, fully-interactive eCommerce platform for high-quality gadgets and fashion clothing, featuring search, filtering, detailed product pages, interactive shopping cart, wishlist, user dashboard, order tracking, and a smooth checkout process.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
