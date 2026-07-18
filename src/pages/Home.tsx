@@ -493,6 +493,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 6. TRUST STATISTICS / LOGOS */}
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="trust-logos-strip">
         <div className="bg-[#EDE9E3]/25 rounded-none border border-[#1A1A1A] p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="space-y-1">

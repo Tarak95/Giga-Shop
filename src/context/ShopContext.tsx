@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, Coupon, PRODUCTS } from '../data/products';
 
 export interface CartItem {
-  id: string; // unique item id based on product id + color + size
+  id: string;                             // unique item id based on product id + color + size
   product: Product;
   quantity: number;
   selectedColor?: { name: string; hex: string };
@@ -279,7 +279,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // calculate total cart cost
     const subtotal = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
     const discountAmount = appliedCoupon ? (subtotal * appliedCoupon.discount) / 100 : 0;
-    const finalTotal = Math.max(subtotal - discountAmount + 10, 0); // +10 flat simulated shipping fee
+    const finalTotal = Math.max(subtotal - discountAmount + 10, 0);              // +10 flat simulated shipping fee
 
     const newOrder: Order = {
       id: `GIGA-${Math.floor(100000 + Math.random() * 900000)}`,
@@ -303,10 +303,10 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const cleanEmail = email.trim().toLowerCase();
     const user = users[cleanEmail];
     if (!user) {
-      return { success: false, error: 'অ্যাকাউন্টটি খুঁজে পাওয়া যায়নি। দয়া করে সাইন আপ করুন।' };
+      return { success: false, error: 'We couldn t find an account. Please sign up.' };
     }
     if (user.password !== password) {
-      return { success: false, error: 'ভুল পাসওয়ার্ড। আবার চেষ্টা করুন।' };
+      return { success: false, error: 'Wrong password. Please try again.' };
     }
     setCurrentUser(user.profile);
     return { success: true };
@@ -315,7 +315,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signUp = (email: string, password: string, fullName: string, phone?: string) => {
     const cleanEmail = email.trim().toLowerCase();
     if (users[cleanEmail]) {
-      return { success: false, error: 'এই ইমেইল দিয়ে ইতিপূর্বে অ্যাকাউন্ট তৈরি করা হয়েছে।' };
+      return { success: false, error: 'This email is already registered.' };
     }
     
     const newProfile: UserProfile = {
